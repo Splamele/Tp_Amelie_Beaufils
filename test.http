@@ -1,0 +1,64 @@
+POST http://localhost:3000/project
+Content-Type: application/json
+
+{
+    "name": "annarchie",
+    "description": "on fait sauter le gouvernement francais "
+}
+
+###
+
+GET http://localhost:3000/project
+
+###
+GET http://localhost:3000/project/6752d6b61170a3b53b6f9ad5
+
+###
+PUT http://localhost:3000/project/6752d6b61170a3b53b6f9ad5
+Content-Type: application/json
+
+{
+    "name": "annarchie",
+    "description": "Pourquoi tout n'a pas envore disparu",
+    "status": "in-progress"
+}
+
+###
+POST http://localhost:3000/project/6752d6b61170a3b53b6f9ad5/complete
+Content-Type: application/json
+
+###
+GET http://localhost:3000/project/by-status?status=in-progress
+
+
+
+###
+
+POST http://localhost:3000/task
+Content-Type: application/json
+
+{
+    "projectId": "6752d6b61170a3b53b6f9ad5", 
+    "title": "Tout le monde dégage",
+    "dueDate": "2024-12-06"
+}
+
+###
+
+GET http://localhost:3000/task
+
+###
+
+GET http://localhost:3000/task/675306da34eae6caba1a838a
+
+###
+PUT http://localhost:3000/task/6752f8b50f32317e2c195615
+Content-Type: application/json
+
+{
+    "titre": "Bye-Bye",
+    "done": true,
+    "dueDate": "2024-12-07"
+}
+###
+DELETE http://localhost:3000/task/675306da34eae6caba1a838a
